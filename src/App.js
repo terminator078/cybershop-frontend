@@ -23,7 +23,7 @@ import Login from './Login/login'
     const handleLogin = () => {
         clearErrors();
         async function collectdata(){
-            let data = await fetch("http://cybershop-backend.herokuapp.com/api/signin",{
+            let data = await fetch("https://cybershop-backend.herokuapp.com/api/signin",{
                 method:"post",
                 body:JSON.stringify({email,password}),
                 headers:{
@@ -44,7 +44,7 @@ import Login from './Login/login'
         clearErrors();
        
         async function collectdata(){
-            let data = await fetch("http://cybershop-backend.herokuapp.com/api/signup",{
+            let data = await fetch("https://cybershop-backend.herokuapp.com/api/signup",{
                 method:"post",
                 body:JSON.stringify({email,password}),
                 headers:{

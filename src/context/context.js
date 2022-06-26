@@ -25,7 +25,7 @@ const Context =(props) =>{
      useEffect(()=>{
     
      async function addcart(){
-               await fetch(`http://cybershop-backend.herokuapp.com/api/add-cart`,{
+               await fetch(`https://cybershop-backend.herokuapp.com/api/add-cart`,{
             method:"post",
             body:JSON.stringify({category:pelement.element.category,
             description:pelement.element.description,
@@ -45,7 +45,7 @@ const Context =(props) =>{
     
 
      async function updatecart(){
-              await fetch(`http://cybershop-backend.herokuapp.com/api/update-cart`,{
+              await fetch(`https://cybershop-backend.herokuapp.com/api/update-cart`,{
             method:"put",
             body:JSON.stringify({userid:user, id:pelement.uid, qty:pelement.qty}),
             headers:{
@@ -56,7 +56,7 @@ const Context =(props) =>{
     }
 
     async function deletecart(){
-                await fetch(`http://cybershop-backend.herokuapp.com/api/delete-cart`,{
+                await fetch(`https://cybershop-backend.herokuapp.com/api/delete-cart`,{
                 method:"delete",
                 body:JSON.stringify({userid:user, id:pelement.uid}),
                 headers:{
@@ -130,9 +130,9 @@ const Context =(props) =>{
     useEffect(()=>{
 
           const initFetch = async () => {
-            const req1 = await axios.get(`http://cybershop-backend.herokuapp.com/api/products`)
-            const req2 = await axios.get(`http://cybershop-backend.herokuapp.com/api/categories`)
-            let cart1 = await axios.get(`http://cybershop-backend.herokuapp.com/api/cart/${user}`)
+            const req1 = await axios.get(`https://cybershop-backend.herokuapp.com/api/products`)
+            const req2 = await axios.get(`https://cybershop-backend.herokuapp.com/api/categories`)
+            let cart1 = await axios.get(`https://cybershop-backend.herokuapp.com/api/cart/${user}`)
             dispatch({type: 'init', payload: {itemdata: req1.data,categorydata:req2.data,cartdata:cart1.data}})
         }
         
